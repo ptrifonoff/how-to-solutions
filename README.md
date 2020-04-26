@@ -9,3 +9,5 @@ myself how I solved a problem but also to be helpful for someone else.
 (also see LICENSE file)
 
 ## How-To: Use Linux as phone headset
+How to use your PC with a bluetooth paired smartphone for audio transmission of playback
+audio files or also for phone calls via the PC microphone and the PC speaker.

@@ -1,8 +1,8 @@
 # Ubuntu: Linux als Headset für Smartphone verwenden
 
 ## Ziel
-Ich möchte den PC mit gekoppeltem Smartphone zur Live-Übertragung von abgespielten Audiodateien
-oder auch zum Telefonieren über das PC-Mikrofon und den PC-Lausprecher verwenden.
+Ich möchte den PC mit per Bluetooth gekoppeltem Smartphone zur Live-Übertragung von abgespielten 
+Audiodateien oder auch zum Telefonieren über das PC-Mikrofon und den PC-Lausprecher verwenden.
 
 ## Test-System
 * Notebook HP EliteBook 2570p
@@ -25,3 +25,4 @@ oder auch zum Telefonieren über das PC-Mikrofon und den PC-Lausprecher verwende
 * Anruf am gekoppelten Smartphone herstellen
 * Audio z.B. im Browser oder eine lokale Datei in Audacity am Notebook abspielen
 * In Pulseaudio das gekoppelte Smartphone als Ausgabegerät unter "Wiedergabe" auswählen
+* Dein Gesprächspartner am Smartphone sollte nun die Audio-Datei hören
