@@ -36,9 +36,9 @@ Rahmenbedingungen:
     * Zugang zum Meeting kann als Gast hergestellt werden, sofern es die Meeting-Einstellungen zulassen (z.B. mit Namen "Browser Conference System")
     * Unter Ausgabe als virtueller Lautsprecher auf "Zoom_Meeting"
     * Unter Eingabe als virtuelles Mikrofon auf "Browser-to-Zoom" stellen
-* Browser öffnen - hier wird der Brwoser "Chromium" verwendet
+* Browser öffnen - hier wird der Browser "Chromium" verwendet
     * Verbindung zu anderem Konferenzsystem über die Webapplikation herstellen
-* In der Anwendung Pulseaudio das gekoppelte Smartphone als Ausgabegerät unter "Wiedergabe" auswählen
+* Anwendung Pulseaudio öffnen
     * Unter Wiedergabe das Programm "Chromium" auf das virtuelle Gerät "Browser_Audio" umstellen
     * Unter Aufnahme das Programm "Chromium" auf "Zoom_Meeting Monitor" oder auf "Zoom-to-Browser" umstellen
 * Wird die Stummschaltung in Zoom nun aufgehoben, können Zoom Teilnehmer die Teilnehmer aus dem Browser hören bzw. umgekehrt
@@ -49,4 +49,4 @@ Rahmenbedingungen:
 ## Fazit
 * Mit diesen Schritten wurden die Systeme mit virtuellen Geräten miteinander erfolgreich verbunden und Teilnehmer beider Systeme 
   können miteinander kommunizieren.
-* Mit den verwendeten Systemen gab es eine Audio-Latenz von ca. 3 Sekunden, die in diesem Fall allerdings akzeptabel war
+* Mit den verwendeten Systemen gab es eine Audio-Latenz von ca. 3 Sekunden, die in diesem Fall allerdings akzeptabel war.
