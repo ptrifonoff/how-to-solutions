@@ -22,14 +22,16 @@ General Conditions:
 * Install PulseAudio to create virtual audio devices
 * Edit default settings in File <code>/etc/pulse/default.pa</code> 
   (e.g. with command <code>sudo nano /etc/pulse/default.pa</code>) and append these lines at the end of the file:
-    * <code>pactl load-module module-null-sink sink_name="out_zoom_meeting" sink_properties=device.description="Zoom_Meeting"</code>
-    * <code>pactl load-module module-remap-source source_name="in_browser_conf" master="out_zoom_meeting.monitor" source_properties=device.description="Zoom-to-Browser"</code>
-    * <code>pactl load-module module-null-sink sink_name="out_browser_audio" sink_properties=device.description="Browser_Audio"</code>
-    * <code>pactl load-module module-remap-source source_name="in_zoom_meeting" master="out_browser_audio.monitor" source_properties=device.description="Browser-to-Zoom"</code>
+    * <code>load-module module-null-sink sink_name="out_zoom_meeting" sink_properties=device.description="Zoom_Meeting"</code>
+    * <code>load-module module-remap-source source_name="in_browser_conf" master="out_zoom_meeting.monitor" source_properties=device.description="Zoom-to-Browser"</code>
+    * <code>load-module module-null-sink sink_name="out_browser_audio" sink_properties=device.description="Browser_Audio"</code>
+    * <code>load-module module-remap-source source_name="in_zoom_meeting" master="out_browser_audio.monitor" source_properties=device.description="Browser-to-Zoom"</code>
 * The command with <code>module-remap-source</code> is necessary, because Zoom does not fully support PulseAudio - so you cannot select
   the virtual device <code>out_browser_audio.monitor</code>. Because of this remap-command it is possible to select browser-output as audio-source in Zoom.
     * *Note:* the remap command with name "in_browser_conf" is not required if the browser supports PulseAudio and "out_zoom_meeting.monitor" 
       can be selected in the browser.
+* If the settings above are not meant to be set by default but only temporarily, the commands can also be entered temporarily each time Pulse Audio has been started by entering 
+  them in the terminal with the leading command <code>pactl</code> (<code>pactl load-module ...</code>).
 
 ## 2. Verbindung herstellen
 * Open Zoom

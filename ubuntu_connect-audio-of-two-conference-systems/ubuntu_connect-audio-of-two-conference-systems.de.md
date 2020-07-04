@@ -21,15 +21,19 @@ Rahmenbedingungen:
 * PulseAudio installieren um virtuelle Audio-Geräte zu erstellen
 * Default Settings in Datei <code>/etc/pulse/default.pa</code> bearbeiten 
   (z.B. mit <code>sudo nano /etc/pulse/default.pa</code>) und diese Zeilen am Ende der Datei einfügen:
-    * <code>pactl load-module module-null-sink sink_name="out_zoom_meeting" sink_properties=device.description="Zoom_Meeting"</code>
-    * <code>pactl load-module module-remap-source source_name="in_browser_conf" master="out_zoom_meeting.monitor" source_properties=device.description="Zoom-to-Browser"</code>
-    * <code>pactl load-module module-null-sink sink_name="out_browser_audio" sink_properties=device.description="Browser_Audio"</code>
-    * <code>pactl load-module module-remap-source source_name="in_zoom_meeting" master="out_browser_audio.monitor" source_properties=device.description="Browser-to-Zoom"</code>
+    * <code>load-module module-null-sink sink_name="out_zoom_meeting" sink_properties=device.description="Zoom_Meeting"</code>
+    * <code>load-module module-remap-source source_name="in_browser_conf" master="out_zoom_meeting.monitor" source_properties=device.description="Zoom-to-Browser"</code>
+    * <code>load-module module-null-sink sink_name="out_browser_audio" sink_properties=device.description="Browser_Audio"</code>
+    * <code>load-module module-remap-source source_name="in_zoom_meeting" master="out_browser_audio.monitor" source_properties=device.description="Browser-to-Zoom"</code>
 * Der Befehl mit <code>module-remap-source</code> ist erforderlich, weil Zoom PulseAudio nicht voll unterstützt und dadurch
   das virtuelle Gerät <code>out_browser_audio.monitor</code> nicht ausgewählt werden kann, wie es möglich wäre, wenn PulseAudio
   unterstützt werden würde. Mit diesem remap-Befehl ist es trotzdem möglich, die Browser-Ausgabe als Audio-Quelle auszuwählen.
     * *Hinweis:* der remap-Befehl mit Namen in_browser_conf ist nicht erforderlich, wenn der Browser PulseAudio unterstützt
       und im Browser "out_zoom_meeting.monitor" ausgewählt werden kann.
+* Wenn die obigen Einstellungen nicht standardmäßig gesetzt werden sollen, sondern nur temporär, können die genannten Befehle
+  auch temporär bei jedem Start von Pulse Audio erneut hergestellt werden, indem die Befehle mit vorangestelltem
+  <code>pactl</code> im Terminal eingegeben werden (<code>pactl load-module ...</code>).
+
 
 ## 2. Verbindung herstellen
 * Zoom öffnen
